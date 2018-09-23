@@ -1,0 +1,16 @@
+{
+  "name": "app-client",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Xebia",
+  "dependencies": {
+    "serve": "10.0.1"
+  }
+}
+
+
+
