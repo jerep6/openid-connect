@@ -14,6 +14,19 @@ app.use(errorsMiddleware);
 app.use(cors());
 app.use(bodyParser());
 
+// const secretResolver = jwks.koaJwtSecret({
+//     jwksUri: "https://xebia-xke.eu.auth0.com/.well-known/jwks.json",
+//     cache: true
+// });
+//
+// app.use(jwt(<any> {
+//     key: 'jwt_token_decoded',
+//     debug: true,
+//     secret: secretResolver,
+//     audience: "myapi1",
+//     issuer: "https://xebia-xke.eu.auth0.com/"
+// }));
+
 app.use(MiddlewareUser);
 
 const rootRouter = new Router({ "prefix": '/:stage?' });
