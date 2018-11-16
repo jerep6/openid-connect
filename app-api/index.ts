@@ -5,7 +5,6 @@ import * as cors from '@koa/cors';
 import errorsMiddleware from './middlewares/ErrorsMiddleware';
 import * as jwt from 'koa-jwt';
 import * as jwks from 'jwks-rsa';
-import MiddlewareUser from './middlewares/MiddlewareUser';
 
 import { routes as booksRoutes } from './controllers/BookController'
 
@@ -23,11 +22,9 @@ app.use(bodyParser());
 //     key: 'jwt_token_decoded',
 //     debug: true,
 //     secret: secretResolver,
-//     audience: "myapi1",
+//     audience: "api-books",
 //     issuer: "https://xebia-xke.eu.auth0.com/"
 // }));
-
-app.use(MiddlewareUser);
 
 const rootRouter = new Router({ "prefix": '/:stage?' });
 rootRouter.use('/books', booksRoutes().routes());

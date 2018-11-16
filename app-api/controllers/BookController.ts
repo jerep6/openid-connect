@@ -13,14 +13,18 @@ export function routes(): Router {
 }
 
 async function list(ctx: Context) {
-    const books = await repo.list();
+    console.log('jwt_token_decoded', ctx.state['jwt_token_decoded'])
+    const userId = ctx.state['jwt_token_decoded']["sub"];
+
+    const books = await repo.list(userId);
     ctx.body = books;
 };
 
 async function get(ctx: Context) {
     const { bookId } = ctx.params;
-    const book = repo.get(bookId);
+    const userId = ctx.state['jwt_token_decoded']["sub"];
 
+    const book = repo.get(userId, bookId);
     ctx.body = book;
 };
 
