@@ -9,10 +9,10 @@ window.addEventListener('load', function() {
   var apiUrl = 'http://localhost:3001';
 
   var webAuth = new auth0.WebAuth({
-    domain: AUTH0_DOMAIN,
-    clientID: AUTH0_CLIENT_ID,
-    redirectUri: AUTH0_CALLBACK_URL,
-    audience: AUTH0_AUDIENCE,
+    domain: 'xebia-xke.eu.auth0.com',
+    clientID: "",
+    redirectUri: location.href,
+    audience: 'api-books',
     responseType: 'token id_token',
     scope: 'openid profile read:book write:book',
     leeway: 60

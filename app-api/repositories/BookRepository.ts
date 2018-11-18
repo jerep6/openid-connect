@@ -66,6 +66,7 @@
 ];
 
 export async function list (userId: string) {
+  console.log('List books for user ' + userId);
   return books.filter(b => b.user_id === userId);
 };
 
