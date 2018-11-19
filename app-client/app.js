@@ -14,7 +14,7 @@ window.addEventListener('load', function() {
     redirectUri: location.href,
     audience: 'api-books',
     responseType: 'token id_token',
-    scope: 'openid profile read:book write:book',
+    scope: 'openid profile read:books write:books',
     leeway: 60
   });
 
